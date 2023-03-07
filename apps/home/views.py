@@ -8,4 +8,4 @@ def index(request):
     context = {
         'mobile_product':mobile_product
     }
-    return render(request, 'mobile.html', context)
+    return render(request, 'index.html', context)
