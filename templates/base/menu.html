@@ -1,3 +1,4 @@
+{% load mptt_tags %}
 <!-- NAVIGATION -->
 <div id="navigation">
     <!-- container -->
@@ -5,33 +6,25 @@
         <div id="responsive-nav">
             <!-- category nav -->
             <div class="category-nav">
-                <span class="category-header">Categories <i class="fa fa-list"></i></span>
+                <span class="category-header">Категории <i class="fa fa-list"></i></span>
                 <ul class="category-list">
+                    {% recursetree category_menu %}
                     <li class="dropdown side-dropdown">
-                        <a class="dropdown-toggle" data-toggle="dropdown" aria-expanded="true">Women’s Clothing <i class="fa fa-angle-right"></i></a>
+                        <a class="dropdown-toggle" data-toggle="dropdown" aria-expanded="true">{{ node.name }} <i class="fa fa-angle-right"></i></a>
+                        {% if not category_menu.is_leaf_node %}
                         <div class="custom-menu">
                             <div class="row">
                                 <div class="col-md-4">
                                     <ul class="list-links">
-                                        <li><a href="#">Дочерние категории</a></li>
+                                        <li><a href="#"> {{ children }}</a></li>
                                     </ul>
                                     <hr class="hidden-md hidden-lg">
                                 </div> 
-                            </div>
-                            <div class="row hidden-sm hidden-xs">
-                                <div class="col-md-12">
-                                    <hr>
-                                    <a class="banner banner-1" href="#">
-                                        <img src="https://c.files.bbci.co.uk/685A/production/_95341762_popcorn4.jpg" alt="">
-                                        <div class="banner-caption text-center">
-                                            <h2 class="white-color">NEW COLLECTION</h2> 
-                                        </div>
-                                    </a>
-                                </div>
-                            </div>
+                            </div> 
                         </div>
-                    </li>
-                    <li><a href="#">Men’s Clothing</a></li> 
+                        {% endif %}
+                    </li> 
+                    {% endrecursetree %}
                 </ul>
             </div>
             <!-- /category nav -->

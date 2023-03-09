@@ -8,6 +8,7 @@ admin.site.register(
     Category,
     DraggableMPTTAdmin,
     list_display=(
+        'id',
         'tree_actions',
         'indented_title', 
     ),
