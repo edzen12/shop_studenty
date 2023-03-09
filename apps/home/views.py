@@ -4,8 +4,8 @@ from apps.product.models import Category, Product
 
 # Create your views here.
 def index(request):
-    mobile_product = Product.objects.all()
+    sliders_product = Product.objects.all().order_by('-id')[:3]
     context = {
-        'mobile_product':mobile_product
+        'sliders_product':sliders_product
     }
     return render(request, 'index.html', context)
