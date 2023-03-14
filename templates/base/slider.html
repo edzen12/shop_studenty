@@ -1,0 +1,34 @@
+	<!-- HOME -->
+	<div id="home">
+		<!-- container -->
+		<div class="container">
+			<!-- home wrap -->
+			<div class="home-wrap">
+				<!-- home slick -->
+				<div id="home-slick">
+					<!-- banner -->
+					{% for spp in sliders_product %}
+					<div class="banner banner-1">
+						{% if spp.image %}
+							<img src="{{spp.image.url}}" alt="">
+							<div class="image-filter"></div>
+						{% else %}
+							<img src="https://alltowall.ru/upload/shop_5/7/6/1/item_7614/s443_int.jpg" alt="">
+							<div class="image-filter"></div>
+						{% endif %}
+						<div class="banner-caption text-center">
+							<h1>{{spp.name}}</h1>
+							<h3 class="white-color font-weak">{{spp.price}}</h3>
+							<button class="primary-btn">купить</button>
+						</div>
+					</div>
+					{% endfor %}
+					<!-- /banner --> 
+				</div>
+				<!-- /home slick -->
+			</div>
+			<!-- /home wrap -->
+		</div>
+		<!-- /container -->
+	</div>
+	<!-- /HOME -->

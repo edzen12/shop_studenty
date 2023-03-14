@@ -16,6 +16,7 @@ class Category(MPTTModel):
     )
     keywords = models.CharField(max_length=100, blank=True, null=True)
     status = models.CharField(max_length=10, choices=STATUS, default='True')
+    stat_third_block = models.CharField(max_length=10, choices=STATUS, default='False')
     description = RichTextField(null=True, blank=True)
     image = models.ImageField(upload_to='category/', blank=True, null=True)
     slug = models.SlugField(null=False, unique=True)

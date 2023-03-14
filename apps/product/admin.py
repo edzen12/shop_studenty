@@ -11,6 +11,7 @@ admin.site.register(
         'id',
         'tree_actions',
         'indented_title', 
+        'stat_third_block', 
     ),
     list_display_links=(
         'indented_title',
